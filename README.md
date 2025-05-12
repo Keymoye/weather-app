@@ -1,1 +1,2 @@
 # weather-app"# maxy" 
+this is an application that retrieves data from openweather api and displays it in formats like wind speed,humidity,feels like and temperature.It's also equipped with error handling techniques that prevent the user from entering an empty input and also displays any possible errors.And it is also designed with a responsive design user interface for different devices and good UI design.
