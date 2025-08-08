@@ -19,7 +19,7 @@ import { TbTemperatureCelsius } from "react-icons/tb";
 import { ImSpinner8 } from "react-icons/im";
 
 //API key
-const Apikey = "114122d826d70c3d2198280275eef832";
+const Apikey = process.env.OPEN_WEATHER_API;
 
 const App = () => {
   const [data, setData] = useState(null);
