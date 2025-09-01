@@ -36,11 +36,12 @@ const App = () => {
 
   const handleSubmit = (e) => {
 
-   
+   console.log("handlesubmit initiated");
     //if input is not empty
     if (inputValue !== "") {
       //set the location
       setLocation(inputValue);
+      console.log("setLocation");
     }
 
     //select input
