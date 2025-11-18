@@ -1,9 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  body {
-    @apply font-primary;
+@theme {
+  --font-primary: Poppins, sans-serif;
+
+  --background-image-gradientBg: url("/src/assets/img/bg.webp");
+
+  --animate-shake: shake 150ms 2 linear;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(3px, 0);
   }
+  50% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Global body font */
+body {
+  font-family: var(--font-primary);
 }
