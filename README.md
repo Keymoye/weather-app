@@ -62,26 +62,32 @@ It’s powered by the **OpenWeatherMap API**, designed with a **modern gradient 
 
 ```
 weather-app/
-├── public/                # Static assets (icons, favicon, banner)
-│   ├── icons/
-│   ├── favicon.ico
-│   └── banner.png
 ├── src/
-│   ├── components/        # Reusable UI components
-│   │   ├── SearchBar.jsx
-│   │   └── WeatherCard.jsx
-│   ├── hooks/             # Custom hooks (e.g., useWeather)
+│   ├── assets/              # Images, icons, background images
+│   │   └── img/
+│   │       └── bg.webp
+│   ├── components/          # Reusable UI components
+│   │   ├── LoadingSpinner.jsx
+│   │   ├── WeatherCard.jsx
+│   │   └── WeatherSearchBar.jsx
+│   ├── hooks/               # Custom hooks
 │   │   └── useWeather.js
-│   ├── utils/             # Helper functions
-│   │   └── formatWeatherData.js
-│   ├── App.jsx            # Root app component
-│   ├── index.jsx          # React entry point
-│   └── styles.css         # Tailwind + custom styles
-├── .env.example           # Example environment variables
+│   ├── services/            # API services
+│   │   └── weatherApi.js
+│   ├── utils/               # Helper functions
+│   │   └── weatherIcons.jsx
+│   ├── App.jsx              # Root app component
+│   ├── App.css              # App-specific styles
+│   ├── index.css            # Global styles
+│   └── main.jsx             # React entry point
+├── .env.example             # Example environment variables
+├── .gitignore
 ├── package.json
+├── eslint.config.js
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
+
 ```
 
 ---
@@ -195,13 +201,13 @@ The app is deployed via **Vercel**.
 This project is licensed under the **MIT License** — see [LICENSE](./LICENSE) for details.
 
 ---
-
 ## 🧑‍💻 Author
 
-**Maxwell Kimoi (Keymoye)**
-📍 Nairobi, Kenya
-💼 Full-Stack Developer | React • Next.js • Tailwind CSS
-🌐 [Portfolio](#) | 🐙 [GitHub](https://github.com/Keymoye) | 📧 Email me
+**Maxwell Kimoi (Keymoye)**  
+📍 Nairobi, Kenya  
+💼 Full-Stack Developer | React • Next.js • Tailwind CSS  
+🌐 [Portfolio]((https://keymoye-portfolio.vercel.app/) | 🐙 [GitHub](https://github.com/Keymoye) | 📧 bowenmaxwell9@gmail.com
+
 
 ---
 
