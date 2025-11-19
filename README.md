@@ -175,7 +175,7 @@ The app is deployed via **Vercel**.
 
 ![Lighthouse - Screenshot 1](./src/assets/lighthouse-1.webp)
 ![Lighthouse - Screenshot 2](./src/assets/lighthouse-2.webp)
-```
+---
 
 ---
 
