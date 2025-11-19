@@ -99,6 +99,7 @@ export default function WeatherCard({ data, refresh }) {
       </div>
 
       <button
+        aria-label="refresh the weather data button"
         onClick={refresh}
         className="mt-4 px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700"
       >

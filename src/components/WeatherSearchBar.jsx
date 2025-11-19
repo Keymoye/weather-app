@@ -55,6 +55,7 @@ export default function WeatherSearchBar({ setCity }) {
         />
         <button
           type="submit"
+          aria-label="search city button for submission"
           className="bg-[#1ab8ed] hover:bg-
            [#15abdd] w-20 h-12 rounded-full flex
             justify-center items-center transition"
