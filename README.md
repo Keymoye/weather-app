@@ -1,102 +1,92 @@
-# React + Vite
+# 🌦️ Weather App — Lighthouse Performance Report
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live demo:** [https://weather-app-keymoye.vercel.app/](https://weather-app-keymoye.vercel.app/)
+**Lighthouse run:** Captured **Nov 19, 2025 — 09:39 AM (GMT+3)** using **Lighthouse 12.8.2** (Emulated Desktop, Chromium 142)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📊 Summary (copy-paste ready)
 
-## React Compiler
+**Overall scores**
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+|       Category | Score |
+| -------------: | :---: |
+|    Performance |   98  |
+|  Accessibility |  100  |
+| Best Practices |   96  |
+|            SEO |  100  |
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
-🌦️ Weather App — Lighthouse Performance Report
+## 📈 Core Web Vitals (filled)
 
-Live Demo → https://weather-app-keymoye.vercel.app/
+| Metric (abbrev.)               | Value | Comment   |
+| ------------------------------ | ----: | --------- |
+| First Contentful Paint (FCP)   | 0.8 s | Excellent |
+| Largest Contentful Paint (LCP) | 1.0 s | Excellent |
+| Total Blocking Time (TBT)      |  0 ms | Excellent |
+| Cumulative Layout Shift (CLS)  | 0.021 | Excellent |
+| Speed Index (SI)               | 0.9 s | Excellent |
 
-📊 Lighthouse Overview
+> **Note:** Values were taken from the Lighthouse run captured above. Values are estimated and may vary between runs.
 
-This project was tested using Lighthouse 12.8.2 on Nov 19, 2025 (Desktop Emulation).
-Below is a summary of the app’s performance across all audited categories.
+---
 
-🚀 Overall Scores
-Category	Score
-Performance	
+## 📉 Metric deltas (as provided)
 
-Accessibility	
+These are the improvement deltas you gave (kept exactly):
 
-Best Practices	
+* FCP: +10
+* LCP: +24
+* TBT: +30
+* CLS: +25
+* Speed Index: +10
 
-SEO	
-📈 Core Web Vitals
-Metric	Value	Rating
-FCP — First Contentful Paint	0.8 s	🟢 Excellent
-LCP — Largest Contentful Paint	1.0 s	🟢 Excellent
-TBT — Total Blocking Time	0 ms	🟢 Excellent
-CLS — Cumulative Layout Shift	0.021	🟢 Excellent
-Speed Index	0.9 s	🟢 Excellent
-📉 Metric Improvements (From Baseline)
-Metric	Improvement
-FCP	+10
-LCP	+24
-TBT	+30
-CLS	+25
-Speed Index	+10
-🖼️ Visual Screenshots
+---
 
-Add your Lighthouse screenshots into an /assets folder and update the paths below:
+## 🖼️ Visuals / Screenshots
 
-![Lighthouse Screenshot 1](./assets/lighthouse-1.png)
-![Lighthouse Screenshot 2](./assets/lighthouse-2.png)
-![Lighthouse Screenshot 3](./assets/lighthouse-3.png)
+Add the Lighthouse screenshots to your repo and reference them here. Example (place your screenshots in `/assets`):
 
-🔍 Insights
-⚡ Performance Insights
+```md
+![Lighthouse - final screenshot](./assets/lighthouse-final.png)
+![Lighthouse - filmstrip 1](./assets/lighthouse-1.png)
+![Lighthouse - filmstrip 2](./assets/lighthouse-2.png)
+```
 
-Render-blocking requests: ~270 ms possible savings
+---
 
-Reduce unused JavaScript (~67 KB potential savings)
+## 🔍 Key insights & quick action items
 
-2 long main thread tasks
+**Performance**
 
-5 user timing marks and measures
+* Render-blocking requests — estimated savings **~270 ms**. Consider deferring noncritical CSS/JS and using `preload` for key assets.
+* Remove / split unused JavaScript — estimated savings **~67 KiB**.
+* Avoid long main-thread tasks (2 long tasks reported); break heavy work into smaller tasks or web workers.
+* Use Lighthouse / DevTools CPU throttling to reproduce and measure improvements.
 
-♿ Accessibility
+**Accessibility**
 
-Passed 14 automatic audits
+* Automatic audits passed; there are **10 recommended manual checks**: keyboard focus order, ARIA labels/roles for custom controls, visible focus indicators, landmark usage, offscreen content hidden from AT, etc. Run a screen-reader test and keyboard-only navigation.
 
-10 additional manual checks recommended (keyboard accessibility, ARIA roles, etc.)
+**Best Practices**
 
-🛡 Best Practices
+* Fix any console errors and verify CSP, COOP, and other headers to mitigate XSS/clickjacking risks.
+* Verify Trusted Types if your app uses dynamic HTML insertion.
 
-No console errors
+**SEO**
 
-CSP protection active
+* Structured data is valid; follow additional validators if you add more structured data (sitemaps, robots, canonical tags).
 
-Clickjacking + XSS mitigations
+---
 
-Passed 13 best-practice audits
+## 🧪 Test environment (metadata)
 
-🔎 SEO
+* Emulated: **Desktop**
+* Chromium: **142.0.0.0** (via DevTools)
+* Lighthouse: **12.8.2**
+* Session: **Single page session / Initial page load**
+* Throttling: **Custom**
+* Generated: **Nov 19, 2025 — 09:39 AM (GMT+3)**
 
-Structured data: Valid
-
-Passed 7 SEO audits
-
-🧪 Test Environment
-
-Emulated Desktop
-
-Custom throttling
-
-Single Page Session
-
-Initial Page Load
-
-Chromium 142
-
-Lighthouse 12.8.2
+---
