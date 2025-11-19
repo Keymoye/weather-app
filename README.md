@@ -1,92 +1,210 @@
-# 🌦️ Weather App — Lighthouse Performance Report
+# 🌦️ Weather App
 
-**Live demo:** [https://weather-app-keymoye.vercel.app/](https://weather-app-keymoye.vercel.app/)
-**Lighthouse run:** Captured **Nov 19, 2025 — 09:39 AM (GMT+3)** using **Lighthouse 12.8.2** (Emulated Desktop, Chromium 142)
-
----
-
-## 📊 Summary (copy-paste ready)
-
-**Overall scores**
-
-|       Category | Score |
-| -------------: | :---: |
-|    Performance |   98  |
-|  Accessibility |  100  |
-| Best Practices |   96  |
-|            SEO |  100  |
+A modern, responsive **Weather Application** built with **React**, **Vite**, and **Tailwind CSS**.
+It fetches real-time weather data from the **OpenWeatherMap API**, provides city-based search, and displays clean, minimal weather information with smooth UI animations.
 
 ---
 
-## 📈 Core Web Vitals (filled)
+<div align="center">
 
-| Metric (abbrev.)               | Value | Comment   |
-| ------------------------------ | ----: | --------- |
-| First Contentful Paint (FCP)   | 0.8 s | Excellent |
-| Largest Contentful Paint (LCP) | 1.0 s | Excellent |
-| Total Blocking Time (TBT)      |  0 ms | Excellent |
-| Cumulative Layout Shift (CLS)  | 0.021 | Excellent |
-| Speed Index (SI)               | 0.9 s | Excellent |
+[![Vercel](https://img.shields.io/github/deployments/Keymoye/weather-app/Production?label=vercel%20deploy\&logo=vercel\&style=for-the-badge)](https://weather-app-keymoye.vercel.app)
+[![CI](https://github.com/Keymoye/weather-app/actions/workflows/ci.yml/badge.svg?style=for-the-badge)](https://github.com/Keymoye/weather-app/actions)
+[![License](https://img.shields.io/github/license/Keymoye/weather-app?style=for-the-badge)](./LICENSE)
+[![Stars](https://img.shields.io/github/stars/Keymoye/weather-app?style=for-the-badge\&color=yellow)](https://github.com/Keymoye/weather-app/stargazers)
+[![Issues](https://img.shields.io/github/issues/Keymoye/weather-app?style=for-the-badge\&color=orange)](https://github.com/Keymoye/weather-app/issues)
+[![React](https://img.shields.io/badge/React-18.2-blue?style=for-the-badge\&logo=react)](https://react.dev)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38b2ac?style=for-the-badge\&logo=tailwind-css)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-5.0-purple?style=for-the-badge\&logo=vite)](https://vitejs.dev)
 
-> **Note:** Values were taken from the Lighthouse run captured above. Values are estimated and may vary between runs.
+![Weather App Banner](./public/banner.png)
 
----
-
-## 📉 Metric deltas (as provided)
-
-These are the improvement deltas you gave (kept exactly):
-
-* FCP: +10
-* LCP: +24
-* TBT: +30
-* CLS: +25
-* Speed Index: +10
+</div>
 
 ---
 
-## 🖼️ Visuals / Screenshots
+## ✨ Overview
 
-Add the Lighthouse screenshots to your repo and reference them here. Example (place your screenshots in `/assets`):
+The **Weather App** allows users to search and view real-time weather information for any city worldwide.
+It’s powered by the **OpenWeatherMap API**, designed with a **modern gradient UI**, and optimized for **performance, accessibility, and responsiveness**.
 
-```md
-![Lighthouse - final screenshot](./assets/lighthouse-final.png)
-![Lighthouse - filmstrip 1](./assets/lighthouse-1.png)
-![Lighthouse - filmstrip 2](./assets/lighthouse-2.png)
+![Weather App Screenshot](./public/screenshot.png)
+🧭 **Live Demo:** [weather-app-keymoye.vercel.app](https://weather-app-keymoye.vercel.app)
+
+---
+
+## 🚀 Features
+
+|  🌟 | Feature               | Description                                               |
+| :-: | :-------------------- | :-------------------------------------------------------- |
+|  🔍 | **City Search**       | Get current weather for any location worldwide            |
+|  📊 | **Dynamic Data**      | Displays temperature, humidity, wind speed, and condition |
+|  🎨 | **Adaptive UI**       | Background color adapts to weather condition              |
+|  📱 | **Responsive Design** | Fully optimized for mobile and desktop                    |
+|  ⚡  | **Fast Load Times**   | Powered by Vite for blazing-fast builds                   |
+|  ❌  | **Error Handling**    | Gracefully handles invalid or empty searches              |
+|  ☁️ | **Cloud Deployment**  | Hosted live on Vercel                                     |
+
+---
+
+## 🛠️ Tech Stack
+
+| Category       | Technology        |
+| -------------- | ----------------- |
+| **Frontend**   | React, Vite       |
+| **Styling**    | Tailwind CSS      |
+| **API**        | OpenWeatherMap    |
+| **Deployment** | Vercel            |
+| **Language**   | JavaScript (ES6+) |
+
+---
+
+## 📁 Project Structure
+
+```
+weather-app/
+├── public/                # Static assets (icons, favicon, banner)
+│   ├── icons/
+│   ├── favicon.ico
+│   └── banner.png
+├── src/
+│   ├── components/        # Reusable UI components
+│   │   ├── SearchBar.jsx
+│   │   └── WeatherCard.jsx
+│   ├── hooks/             # Custom hooks (e.g., useWeather)
+│   │   └── useWeather.js
+│   ├── utils/             # Helper functions
+│   │   └── formatWeatherData.js
+│   ├── App.jsx            # Root app component
+│   ├── index.jsx          # React entry point
+│   └── styles.css         # Tailwind + custom styles
+├── .env.example           # Example environment variables
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
 ```
 
 ---
 
-## 🔍 Key insights & quick action items
+## 🔑 Environment Variables
 
-**Performance**
+Create a `.env` file in the root directory:
 
-* Render-blocking requests — estimated savings **~270 ms**. Consider deferring noncritical CSS/JS and using `preload` for key assets.
-* Remove / split unused JavaScript — estimated savings **~67 KiB**.
-* Avoid long main-thread tasks (2 long tasks reported); break heavy work into smaller tasks or web workers.
-* Use Lighthouse / DevTools CPU throttling to reproduce and measure improvements.
+```bash
+VITE_WEATHER_API_KEY=your_openweathermap_api_key_here
+```
 
-**Accessibility**
-
-* Automatic audits passed; there are **10 recommended manual checks**: keyboard focus order, ARIA labels/roles for custom controls, visible focus indicators, landmark usage, offscreen content hidden from AT, etc. Run a screen-reader test and keyboard-only navigation.
-
-**Best Practices**
-
-* Fix any console errors and verify CSP, COOP, and other headers to mitigate XSS/clickjacking risks.
-* Verify Trusted Types if your app uses dynamic HTML insertion.
-
-**SEO**
-
-* Structured data is valid; follow additional validators if you add more structured data (sitemaps, robots, canonical tags).
+You can get a free API key from [OpenWeatherMap](https://openweathermap.org/api).
 
 ---
 
-## 🧪 Test environment (metadata)
+## 🧩 Installation & Setup
 
-* Emulated: **Desktop**
-* Chromium: **142.0.0.0** (via DevTools)
-* Lighthouse: **12.8.2**
-* Session: **Single page session / Initial page load**
-* Throttling: **Custom**
-* Generated: **Nov 19, 2025 — 09:39 AM (GMT+3)**
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/Keymoye/weather-app.git
+cd weather-app
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set up environment**
+
+```bash
+cp .env.example .env
+# Add your OpenWeatherMap API key
+```
+
+4. **Run locally**
+
+```bash
+npm run dev
+```
+
+5. **Build for production**
+
+```bash
+npm run build
+```
+
+---
+
+## 🌍 Deployment
+
+The app is deployed via **Vercel**.
+🧭 **Live Site:** [weather-app-keymoye.vercel.app](https://weather-app-keymoye.vercel.app)
+
+---
+
+## 📊 Lighthouse Performance Report
+
+| Category           | Score |
+| ------------------ | :---: |
+| **Performance**    |   98  |
+| **Accessibility**  |  100  |
+| **Best Practices** |   96  |
+| **SEO**            |  100  |
+
+### Core Web Vitals
+
+| Metric                         | Value |
+| ------------------------------ | ----- |
+| FCP (First Contentful Paint)   | 0.8 s |
+| LCP (Largest Contentful Paint) | 1.0 s |
+| TBT (Total Blocking Time)      | 0 ms  |
+| CLS (Cumulative Layout Shift)  | 0.021 |
+| Speed Index                    | 0.9 s |
+
+**Screenshots:**
+
+```markdown
+![Lighthouse - Final Screenshot](./assets/lighthouse-final.png)
+![Lighthouse - Filmstrip 1](./assets/lighthouse-1.png)
+![Lighthouse - Filmstrip 2](./assets/lighthouse-2.png)
+```
+
+---
+
+## 🧪 Test Environment
+
+* **Emulated Device:** Desktop
+* **Browser / Engine:** Chromium 142.0.0.0
+* **Lighthouse Version:** 12.8.2
+* **Session:** Single-page load
+* **Throttling:** Custom
+
+---
+
+## 🧠 Highlights
+
+* Optimized Performance: Lighthouse score above 95 across categories
+* Accessible Design: ARIA labels, semantic HTML, responsive UI
+* Reusable Components: SearchBar & WeatherCard
+* Minimal Dependencies, Simple Architecture, Easy to Scale
+* Secure: API key stored in `.env`
+
+---
+
+## 🪪 License
+
+This project is licensed under the **MIT License** — see [LICENSE](./LICENSE) for details.
+
+---
+
+## 🧑‍💻 Author
+
+**Maxwell Kimoi (Keymoye)**
+📍 Nairobi, Kenya
+💼 Full-Stack Developer | React • Next.js • Tailwind CSS
+🌐 [Portfolio](#) | 🐙 [GitHub](https://github.com/Keymoye) | 📧 Email me
+
+---
+
+⭐ If you like this project, don’t forget to star the repo!
 
 ---
