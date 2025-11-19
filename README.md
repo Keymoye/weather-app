@@ -204,13 +204,13 @@ The app is deployed via **Vercel**.
 This project is licensed under the **MIT License** — see [LICENSE](./LICENSE) for details.
 
 ---
+
 ## 🧑‍💻 Author
 
 **Maxwell Kimoi (Keymoye)**  
 📍 Nairobi, Kenya  
 💼 Full-Stack Developer | React • Next.js • Tailwind CSS  
 🌐 [Portfolio](https://keymoye-portfolio.vercel.app) | 🐙 [GitHub](https://github.com/Keymoye) | 📧 bowenmaxwell9@gmail.com
-
 
 ---
 
