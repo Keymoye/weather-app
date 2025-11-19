@@ -27,7 +27,7 @@ It fetches real-time weather data from the **OpenWeatherMap API**, provides city
 The **Weather App** allows users to search and view real-time weather information for any city worldwide.
 It’s powered by the **OpenWeatherMap API**, designed with a **modern gradient UI**, and optimized for **performance, accessibility, and responsiveness**.
 
-![Weather App Screenshot](./public/screenshot.png)
+![Weather App Screenshot](./public/screenshot.webp)
 🧭 **Live Demo:** [weather-app-keymoye.vercel.app](https://weather-app-keymoye.vercel.app)
 
 ---
@@ -62,10 +62,14 @@ It’s powered by the **OpenWeatherMap API**, designed with a **modern gradient 
 
 ```
 weather-app/
+├── public/                  # Static assets visible to the browser
+│   └── screenshot.webp      # App screenshot for README / marketing
 ├── src/
 │   ├── assets/              # Images, icons, background images
-│   │   └── img/
-│   │       └── bg.webp
+│   │   ├── img/
+│   │   │   └── bg.webp      # Background image
+│   │   ├── lighthouse-1.webp # Lighthouse screenshot 1
+│   │   └── lighthouse-2.webp # Lighthouse screenshot 2
 │   ├── components/          # Reusable UI components
 │   │   ├── LoadingSpinner.jsx
 │   │   ├── WeatherCard.jsx
@@ -87,6 +91,7 @@ weather-app/
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
+
 
 ```
 
@@ -166,12 +171,10 @@ The app is deployed via **Vercel**.
 | CLS (Cumulative Layout Shift)  | 0.021 |
 | Speed Index                    | 0.9 s |
 
-**Screenshots:**
+**Lighthouse Audit Screenshots:**  
 
-```markdown
-![Lighthouse - Final Screenshot](./assets/lighthouse-final.png)
-![Lighthouse - Filmstrip 1](./assets/lighthouse-1.png)
-![Lighthouse - Filmstrip 2](./assets/lighthouse-2.png)
+![Lighthouse - Screenshot 1](./src/assets/lighthouse-1.webp)
+![Lighthouse - Screenshot 2](./src/assets/lighthouse-2.webp)
 ```
 
 ---
@@ -206,7 +209,7 @@ This project is licensed under the **MIT License** — see [LICENSE](./LICENSE) 
 **Maxwell Kimoi (Keymoye)**  
 📍 Nairobi, Kenya  
 💼 Full-Stack Developer | React • Next.js • Tailwind CSS  
-🌐 [Portfolio]((https://keymoye-portfolio.vercel.app/) | 🐙 [GitHub](https://github.com/Keymoye) | 📧 bowenmaxwell9@gmail.com
+🌐 [Portfolio](https://keymoye-portfolio.vercel.app) | 🐙 [GitHub](https://github.com/Keymoye) | 📧 bowenmaxwell9@gmail.com
 
 
 ---
