@@ -1,34 +1,31 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { getWeatherByCity } from "../services/weatherApi";
+import { CityNotFoundError, NetworkError } from "../services/error.js";
 
 export default function useWeather(initialCity) {
   const [city, setCity] = useState(initialCity);
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
-  const fetchWeather = async () => {
-    if (!city) return;
+  const query = useQuery({
+    queryKey: ["weather", city],
+    queryFn: () => getWeatherByCity(city),
+    enabled: !!city,
+    staleTime: 10 * 60 * 1000,
+    retry: (count, error) => {
+      if (error instanceof CityNotFoundError) return false;
+      if (error instanceof NetworkError) return true;
+      return count < 2;
+    },
+  });
 
-    console.log("[useWeather] Fetching weather for city:", city);
-    setLoading(true);
-    setError(null);
-
-    try {
-      const weather = await getWeatherByCity(city);
-      console.log("[useWeather] API success:", weather);
-      setData(weather);
-    } catch (err) {
-      console.error("[useWeather] Error:", err);
-      setError(err.message || "Failed to fetch weather");
-    } finally {
-      setLoading(false);
-    }
+  return {
+    city,
+    setCity,
+    data: query.data,
+    error: query.error,
+    isLoading: query.isLoading,
+    isFetching: query.isFetching,
+    refetch: query.refetch,
+    isError: query.isError,
   };
-
-  useEffect(() => {
-    fetchWeather();
-  }, [city]);
-
-  return { data, loading, error, refresh: fetchWeather, setCity };
 }
